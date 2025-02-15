@@ -1,9 +1,7 @@
 <?php
 session_start();
-
-if (!isset($_SESSION['user_id']) || $_SESSION['user_role'] !== 'user') {
-    header("Location: login.php");
-    exit();
+if (!isset($_SESSION["user"])) {
+   header("Location: login.php");
 }
 ?>
 <!DOCTYPE html>
@@ -18,7 +16,7 @@ if (!isset($_SESSION['user_id']) || $_SESSION['user_role'] !== 'user') {
 </head>
 <body>
     <div class="container">
-        <h1>Welcome to Landing Page</h1>
+        <h1>Welcome to the Landing Page</h1>
         <a href="logout.php" class="btn btn-warning">Logout</a>
     </div>
 </body>
